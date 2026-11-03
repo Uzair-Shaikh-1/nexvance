@@ -1,0 +1,353 @@
+/* ==========================================================
+   NexVance design system (from the Figma file)
+   Desktop frame = 1440px   |   Mobile frame = 390px
+   Font: Inter, weights 400 / 500 / 600 / 700 / 800
+   Pattern: every section is full width and holds a .container
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* colors */
+  --bg: #0B0C1A;
+  --surface: #14162B;
+  --border: #2A2E52;
+  --text: #F5F6FF;
+  --muted: #A3A9CC;
+  --primary: #5B4BF5;
+  --accent: #22D3EE;
+
+  /* gradients (all diagonal) */
+  --grad-brand: linear-gradient(135deg, #5B4BF5, #22D3EE);
+  --grad-panel-brand: linear-gradient(135deg, #5B4BF5, #2A1F8F);
+  --grad-panel-creator: linear-gradient(135deg, #0E7490, #0A3F52);
+  --grad-cta: linear-gradient(135deg, #5B4BF5, #0E7490);
+  --grad-photo: linear-gradient(135deg, #1B1E3F, #2A2E52);
+
+  /* font */
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p { margin: 0; }
+
+/* ---------- layout ---------- */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 80px;                 /* side margin on every section */
+}
+.section { padding: 96px 0; }
+.section--after-hero { padding-top: 72px; }
+.section--tint { background: var(--surface); }
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  margin-bottom: 56px;             /* header to content */
+}
+.section-header .t-section { max-width: 900px; }
+.section-header .t-sub { max-width: 720px; }
+
+/* ---------- typography ---------- */
+.t-hero-home { font-size: 72px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; max-width: 1100px; }
+.t-hero      { font-size: 64px; font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; max-width: 1000px; }
+.t-section   { font-size: 44px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+.t-cta       { font-size: 48px; font-weight: 800; line-height: 1.10; letter-spacing: -0.01em; max-width: 900px; }
+.t-founder   { font-size: 56px; font-weight: 800; line-height: 1.10; letter-spacing: -0.01em; }
+.t-contact   { font-size: 56px; font-weight: 800; line-height: 1.10; letter-spacing: -0.015em; }
+.t-panel     { font-size: 48px; font-weight: 800; line-height: 1.10; letter-spacing: -0.01em; }
+.t-lead      { font-size: 20px; font-weight: 400; line-height: 1.5; color: var(--muted); max-width: 760px; }
+.t-sub       { font-size: 18px; font-weight: 400; line-height: 1.5; color: var(--muted); }
+.t-card-title{ font-size: 22px; font-weight: 600; line-height: 1.25; }
+.t-body      { font-size: 16px; font-weight: 400; line-height: 1.5; color: var(--muted); }
+.t-step-num  { font-size: 48px; font-weight: 800; letter-spacing: -0.01em; color: var(--accent); }
+.t-eyebrow   { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.t-founder-role { font-size: 18px; font-weight: 500; color: var(--accent); }
+.t-founder-text { font-size: 18px; font-weight: 400; line-height: 1.6; color: var(--muted); }
+.t-quote     { font-size: 22px; font-weight: 500; line-height: 1.5; text-align: center; }
+.t-small     { font-size: 14px; font-weight: 400; color: var(--muted); }
+
+/* ---------- logo + nav ---------- */
+.logo { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--text); text-decoration: none; }
+.logo-mark {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: var(--grad-brand);
+  font-size: 22px; font-weight: 800;
+}
+.nav { height: 90px; }
+.nav .container { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-links { display: flex; align-items: center; gap: 36px; }
+.nav-link { font-size: 16px; font-weight: 500; color: var(--muted); text-decoration: none; }
+.nav-link.is-active { color: var(--text); }
+.menu-button { display: none; }    /* shown on mobile only */
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 56px; padding: 0 32px;
+  border: 1px solid transparent; border-radius: 999px;
+  font-family: var(--font); font-size: 17px; font-weight: 600; line-height: 1;
+  text-decoration: none; cursor: pointer;
+}
+.btn--sm { height: 42px; padding: 0 22px; font-size: 15px; }     /* nav Contact button */
+.btn--primary { background: var(--primary); color: var(--text); }
+.btn--light   { background: var(--text); color: var(--bg); }       /* on gradient panels */
+.btn--dark    { background: var(--bg); color: var(--text); }       /* 2nd button on CTA band */
+.btn--outline { background: transparent; border-color: var(--border); color: var(--text); }
+.btn-row { display: flex; gap: 16px; }
+
+/* ---------- pill ---------- */
+.pill {
+  display: inline-flex; align-items: center;
+  padding: 8px 16px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent);
+}
+
+/* ---------- hero ---------- */
+.hero-home { padding: 56px 0 96px; }
+.hero-home .container { display: flex; flex-direction: column; align-items: center; gap: 56px; }
+.hero-headline { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+
+.page-hero { padding: 72px 0 88px; }
+.page-hero .container { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+
+/* split hero: "I'm a Brand" / "I'm a Creator" */
+.panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
+.panel { padding: 48px; border-radius: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.panel--brand   { background: var(--grad-panel-brand); }
+.panel--creator { background: var(--grad-panel-creator); }
+.panel-tag  { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.panel-text { font-size: 18px; line-height: 1.5; }
+.panel-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px; font-weight: 500; }
+
+/* ---------- social proof ---------- */
+.proof { background: var(--surface); padding: 64px 0; }
+.proof .container { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.proof-label { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.logo-row { display: flex; gap: 24px; justify-content: center; }
+.logo-box {
+  width: 170px; height: 72px; border-radius: 16px;
+  display: grid; place-items: center;
+  background: var(--bg); border: 1px solid var(--border);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--muted);
+}
+.testimonial {
+  width: 100%; max-width: 880px; padding: 40px; border-radius: 24px;
+  background: var(--bg); border: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+
+/* ---------- cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cards--4 { grid-template-columns: repeat(4, 1fr); }
+.card {
+  padding: 32px; border-radius: 24px;
+  background: var(--surface); border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.icon-badge {
+  width: 48px; height: 48px; border-radius: 14px;
+  display: grid; place-items: center;
+  background: var(--grad-brand);
+  font-size: 15px; font-weight: 700;
+}
+
+/* ---------- steps ---------- */
+.steps { display: grid; grid-template-columns: repeat(var(--cols, 4), 1fr); gap: 32px; }
+.step { display: flex; flex-direction: column; gap: 12px; }
+.step-body { display: flex; flex-direction: column; gap: 12px; }
+
+/* ---------- founder ---------- */
+.founder { padding: 32px 0 96px; }
+.founder .container { display: flex; align-items: center; gap: 80px; }
+.founder-photo { width: 480px; height: 560px; flex-shrink: 0; border-radius: 32px; background: var(--grad-photo); object-fit: cover; }
+.founder-text { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+
+/* ---------- FAQ ---------- */
+.faq-list { width: 100%; max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.faq-item { padding: 24px 28px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); }
+.faq-q { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 20px; font-weight: 600; line-height: 1.3; }
+.faq-toggle {
+  width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid var(--border); color: var(--accent); font-size: 18px; font-weight: 500;
+}
+.faq-a { margin-top: 12px; font-size: 16px; line-height: 1.6; color: var(--muted); }
+
+/* ---------- CTA band ---------- */
+.cta { padding: 0 0 96px; }
+.cta--after-tint { padding-top: 96px; }
+.cta-card {
+  padding: 72px; border-radius: 40px; background: var(--grad-cta);
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;
+}
+
+/* ---------- markets (About) ---------- */
+.markets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.market { padding: 32px; border-radius: 24px; background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.market-name { font-size: 40px; font-weight: 800; }
+.market-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+
+/* ---------- contact form ---------- */
+.contact { padding: 72px 0 96px; }
+.contact .container { display: flex; align-items: flex-start; gap: 64px; }
+.contact-intro { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.form-card { flex: 1; padding: 40px; border-radius: 28px; background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 20px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.label { font-size: 14px; font-weight: 500; }
+.input {
+  width: 100%; height: 52px; padding: 0 16px; border-radius: 14px;
+  background: var(--bg); border: 1px solid var(--border);
+  font-family: var(--font); font-size: 16px; color: var(--text);
+}
+.input::placeholder { color: var(--muted); }
+textarea.input { height: 140px; padding: 16px; resize: vertical; }
+.chips { display: flex; gap: 12px; }
+.chip {
+  height: 42px; padding: 0 24px; border-radius: 999px;
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--border); font-size: 15px; font-weight: 600; color: var(--muted); background: transparent;
+}
+.chip.is-selected { background: var(--primary); border-color: var(--primary); color: var(--text); }
+
+/* ---------- footer ---------- */
+.footer { background: var(--surface); padding: 56px 0 40px; }
+.footer .container { display: flex; flex-direction: column; gap: 40px; }
+.footer-top { display: flex; justify-content: space-between; gap: 40px; }
+.footer-brand { display: flex; flex-direction: column; gap: 16px; max-width: 360px; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.footer-cols { display: flex; gap: 72px; }
+.footer-col { display: flex; flex-direction: column; gap: 12px; }
+.footer-heading { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.footer-link { font-size: 15px; line-height: 1.8; color: var(--muted); text-decoration: none; }
+
+/* ==========================================================
+   MOBILE  (390px design)  -  applies below 768px
+   Tablet (768px to 1439px) was not designed in Figma:
+   it uses the desktop values inside the 1440px max width.
+   ========================================================== */
+@media (max-width: 767px) {
+  .container { padding: 0 20px; }
+  .section { padding: 48px 0 56px; }
+  .section--after-hero { padding-top: 48px; }
+  .section-header { gap: 12px; margin-bottom: 32px; }
+
+  /* typography */
+  .t-hero-home { font-size: 40px; line-height: 1.10; letter-spacing: -0.01em; }
+  .t-hero      { font-size: 40px; line-height: 1.10; letter-spacing: -0.01em; }
+  .t-section   { font-size: 30px; line-height: 1.20; letter-spacing: -0.005em; }
+  .t-cta       { font-size: 30px; line-height: 1.15; letter-spacing: -0.005em; }
+  .t-founder   { font-size: 36px; }
+  .t-contact   { font-size: 38px; letter-spacing: -0.01em; }
+  .t-panel     { font-size: 36px; }
+  .t-lead, .t-sub { font-size: 16px; }
+  .t-card-title { font-size: 20px; line-height: 1.3; }
+  .t-body      { font-size: 15px; }
+  .t-step-num  { font-size: 36px; }
+  .t-eyebrow   { font-size: 12px; }
+  .t-founder-role, .t-founder-text { font-size: 16px; }
+  .t-quote     { font-size: 17px; }
+
+  /* logo + nav */
+  .logo { gap: 10px; font-size: 20px; }
+  .logo-mark { width: 34px; height: 34px; border-radius: 10px; font-size: 19px; }
+  .nav { height: 76px; }
+  .nav-links, .nav .btn--sm { display: none; }
+  .menu-button {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border); background: transparent;
+  }
+  .menu-button span { width: 18px; height: 2px; background: var(--text); }
+
+  /* buttons: full width, stacked */
+  .btn { height: 52px; padding: 0 24px; font-size: 16px; }
+  .btn-row { flex-direction: column; gap: 12px; width: 100%; }
+  .btn-row .btn, .panel .btn, .founder-text .btn, .form-card .btn { width: 100%; }
+
+  .pill { padding: 7px 14px; font-size: 12px; }
+
+  /* hero */
+  .hero-home { padding: 32px 0 48px; }
+  .hero-home .container { gap: 20px; }
+  .hero-headline { gap: 20px; }
+  .page-hero { padding: 32px 0 48px; }
+  .page-hero .container { gap: 20px; }
+  .panel-grid { grid-template-columns: 1fr; gap: 16px; }
+  .panel { padding: 28px; border-radius: 28px; gap: 16px; width: 100%; }
+  .panel-text { font-size: 16px; }
+  .panel-list { gap: 8px; font-size: 15px; }
+  .panel-tag { font-size: 12px; }
+
+  /* social proof */
+  .proof { padding: 40px 0; }
+  .proof .container { gap: 24px; }
+  .proof-label { font-size: 12px; letter-spacing: 0.10em; line-height: 1.5; }
+  .logo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .logo-box { width: auto; height: 60px; border-radius: 14px; font-size: 12px; }
+  .testimonial { padding: 24px; border-radius: 20px; gap: 14px; }
+
+  /* cards and steps */
+  .cards, .cards--4 { grid-template-columns: 1fr; gap: 16px; }
+  .card { padding: 24px; border-radius: 20px; gap: 12px; }
+  .icon-badge { width: 40px; height: 40px; border-radius: 12px; font-size: 14px; }
+  .steps { grid-template-columns: 1fr; gap: 24px; }
+  .step { flex-direction: row; gap: 20px; }
+  .step-body { gap: 6px; }
+  .step-body .t-card-title { font-size: 18px; }
+
+  /* founder */
+  .founder { padding: 16px 0 8px; }
+  .founder .container { flex-direction: column; align-items: stretch; gap: 24px; }
+  .founder-photo { width: 100%; height: 380px; border-radius: 28px; }
+  .founder-text { gap: 14px; }
+
+  /* FAQ */
+  .faq-list { gap: 12px; }
+  .faq-item { padding: 20px; border-radius: 18px; }
+  .faq-q { font-size: 17px; }
+  .faq-a { font-size: 15px; }
+
+  /* CTA band */
+  .cta { padding: 48px 0 56px; }
+  .cta-card { padding: 28px; border-radius: 28px; gap: 20px; }
+
+  /* markets */
+  .markets { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .market { padding: 24px; border-radius: 20px; gap: 6px; }
+  .market-name { font-size: 32px; }
+  .market-label { font-size: 11px; }
+
+  /* contact */
+  .contact { padding: 32px 0 56px; }
+  .contact .container { flex-direction: column; align-items: stretch; gap: 28px; }
+  .contact-intro { gap: 16px; }
+  .form-card { padding: 24px; border-radius: 24px; gap: 18px; }
+  textarea.input { height: 120px; }
+  .chip { padding: 0 22px; }
+
+  /* footer */
+  .footer { padding: 40px 0 32px; }
+  .footer .container { gap: 32px; }
+  .footer-top { flex-direction: column; gap: 32px; }
+  .footer-brand { max-width: none; }
+  .footer-cols { gap: 40px; }
+  .footer-col { gap: 10px; }
+  .footer-heading { font-size: 11px; }
+  .footer-link { font-size: 14px; }
+}
