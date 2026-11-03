@@ -65,9 +65,9 @@ export default function Home() {
               title="I'm a Brand"
               text="Find creators your audience already trusts."
               list={[
-                "Vetted creators only",
-                "Managed end to end",
-                "Clear reporting",
+                "• Vetted creators only",
+                "• Managed end to end",
+                "• Clear reporting",
               ]}
               cta="Find creators"
             />
@@ -78,9 +78,9 @@ export default function Home() {
               title="I'm a Creator"
               text="Land brand deals worth your audience."
               list={[
-                "Pre-vetted brands",
-                "Fair, on-time pay",
-                "Long-term partnerships",
+                "• Pre-vetted brands",
+                "• Fair, on-time pay",
+                "• Long-term partnerships",
               ]}
               cta="Apply as a creator"
             />

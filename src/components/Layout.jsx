@@ -133,7 +133,9 @@ const Footer = () => {
           © 2026 NexVance. All rights reserved.
         </p>
         <p className="t-small">
-          Developed By Uzair Shaikh.
+          Developed By Uzair Shaikh. <br />
+          Linkdin : <a className="uzair-link" href="https://www.linkedin.com/in/uzair-shaikh-376305394/">Uzair Shaikh</a> <br />
+          +92 3093253595
         </p>
       </div>
     </footer>

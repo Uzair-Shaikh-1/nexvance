@@ -365,3 +365,7 @@ textarea.input { height: 140px; padding: 16px; resize: vertical; }
   object-fit: cover;
   display: block;
 }
+.uzair-link{
+  color: var(--muted);
+  text-decoration: none;
+}
