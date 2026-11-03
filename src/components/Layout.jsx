@@ -94,6 +94,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
+              <h2>NexVance</h2>
             <p>
               Premium creator partnerships for global brands, managed
               from pitch to payout.
@@ -130,6 +131,9 @@ const Footer = () => {
 
         <p className="t-small">
           © 2026 NexVance. All rights reserved.
+        </p>
+        <p className="t-small">
+          Developed By Uzair Shaikh.
         </p>
       </div>
     </footer>
